@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pl" data-preview>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#b1d4fa" />
+    <title>Casus</title>
+    <meta
+      name="description"
+      content="Asystent AI dla lekarzy: leki, wytyczne i kody ICD w jednej rozmowie."
+    />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <link rel="preload" href="./fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <header class="bar">
+      <a class="logo" href="./" aria-label="Casus">
+        <img src="./assets/mark.svg" alt="" width="17" height="17" class="logo-mark" />
+        <img src="./assets/wordmark.svg" alt="casus" width="116" height="22" />
+      </a>
+      <nav class="bar-actions">
+        <button type="button" id="lang" class="chip" lang="en">EN</button>
+        <a class="chip chip-solid" href="https://casus.md/login" data-i18n="login">Zaloguj</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <div class="backdrop" id="backdrop" aria-hidden="true">
+        <div class="pattern-wrap">
+          <svg class="pattern" id="pattern" focusable="false"></svg>
+          <div class="wave">
+            <div class="wave-track"><svg class="pattern pattern-glow" id="pattern-wave" focusable="false"></svg></div>
+          </div>
+          <div class="spot" id="spot"><svg class="pattern pattern-glow" id="pattern-spot" focusable="false"></svg></div>
+        </div>
+      </div>
+
+      <section class="stage" aria-labelledby="hero-title">
+        <h1 id="hero-title" data-i18n="title">Asystent AI dla lekarzy</h1>
+      </section>
+
+      <ul class="features">
+        <li>
+          <svg class="tile" viewBox="0 0 60 60" aria-hidden="true"><rect width="60" height="60" class="t-bg" /><path class="t-fg" d="M30 0H60V30A30 30 0 0 0 30 60H0V30A30 30 0 0 0 30 0Z" /></svg>
+          <h2 data-i18n="f1t">Leki</h2>
+          <p data-i18n="f1d">Charakterystyki, dawkowanie, interakcje i refundacja z ministerialnej bazy leków.</p>
+        </li>
+        <li>
+          <svg class="tile tile-sky" viewBox="0 0 60 60" aria-hidden="true"><rect width="60" height="60" class="t-bg" /><path class="t-fg" d="M0 0H30A30 30 0 0 0 60 30V60H30A30 30 0 0 0 0 30Z" /></svg>
+          <h2 data-i18n="f2t">Wytyczne</h2>
+          <p data-i18n="f2d">Odpowiedzi osadzone w aktualnych wytycznych, z odnośnikiem do fragmentu.</p>
+        </li>
+        <li>
+          <svg class="tile tile-neg" viewBox="0 0 60 60" aria-hidden="true"><rect width="60" height="60" class="t-bg" /><path class="t-fg" d="M30 0H60V30A30 30 0 0 0 30 60H0V30A30 30 0 0 0 30 0Z" /></svg>
+          <h2 data-i18n="f3t">Kody ICD</h2>
+          <p data-i18n="f3d">ICD-10 i ICD-9 PL bez ręcznego przeszukiwania tabel.</p>
+        </li>
+      </ul>
+
+      <section class="panel" id="signup" aria-labelledby="signup-title">
+        <div class="panel-inner">
+          <h2 id="signup-title" class="panel-title">
+            <span class="dot" aria-hidden="true"></span><span data-i18n="eyebrow">Przedpremiera</span>
+          </h2>
+          <p class="panel-lead" data-i18n="note">Rejestracja jest zamknięta. Powiadomimy Cię, gdy pojawi się miejsce.</p>
+
+          <form id="waitlist" class="form" novalidate>
+            <div class="field">
+              <label for="email" data-i18n="emailLabel">Adres e-mail</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                inputmode="email"
+                autocomplete="email"
+                spellcheck="false"
+                required
+                placeholder="twoj@adres.pl"
+                data-i18n-placeholder="emailPlaceholder"
+                aria-describedby="status"
+              />
+            </div>
+
+            <div class="form-foot">
+              <p id="status" class="status" role="status" aria-live="polite"></p>
+              <button type="submit" class="submit">
+                <span class="submit-label" data-i18n="submit">Zapisz się na listę</span>
+                <span class="submit-icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M1 7h11M7.5 2.5 12 7l-4.5 4.5" stroke="currentColor" stroke-width="1.6" />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </form>
+
+          <p class="mono preview-note" id="preview-note" data-i18n="previewNote" hidden>
+            Podgląd projektu: formularz nie zapisuje adresów.
+          </p>
+
+          <div class="done" id="done" hidden tabindex="-1">
+            <svg class="done-tile" viewBox="0 0 60 60" aria-hidden="true">
+              <rect width="60" height="60" fill="#bad6e1" />
+              <path d="M30 0H60V30A30 30 0 0 0 30 60H0V30A30 30 0 0 0 30 0Z" fill="#0c0c0c" />
+            </svg>
+            <p data-i18n="ok">Dziękujemy. Jesteś na liście.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="foot mono">© 2026 Casus</footer>
+    </main>
+  </body>
+</html>
